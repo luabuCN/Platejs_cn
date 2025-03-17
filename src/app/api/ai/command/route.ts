@@ -21,7 +21,10 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  const openai = createOpenAI({ apiKey });
+  const openai = createOpenAI({
+    apiKey,
+    baseURL:'https://api.chatanywhere.tech'
+  });
 
   try {
     const result = await streamText({
