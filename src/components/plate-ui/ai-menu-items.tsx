@@ -36,7 +36,7 @@ export type EditorChatState =
 export const aiChatItems = {
   accept: {
     icon: <Check />,
-    label: 'Accept',
+    label: '接受',
     value: 'accept',
     onSelect: ({ editor }) => {
       editor.getTransforms(AIChatPlugin).aiChat.accept();
@@ -45,7 +45,7 @@ export const aiChatItems = {
   },
   continueWrite: {
     icon: <PenLine />,
-    label: 'Continue writing',
+    label: '继续写作',
     value: 'continueWrite',
     onSelect: ({ editor }) => {
       const ancestorNode = editor.api.block({ highest: true });
@@ -67,7 +67,7 @@ Start writing a new paragraph AFTER <Document> ONLY ONE SENTENCE`
   },
   discard: {
     icon: <X />,
-    label: 'Discard',
+    label: '放弃',
     shortcut: 'Escape',
     value: 'discard',
     onSelect: ({ editor }) => {
@@ -77,7 +77,7 @@ Start writing a new paragraph AFTER <Document> ONLY ONE SENTENCE`
   },
   emojify: {
     icon: <SmileIcon />,
-    label: 'Emojify',
+    label: '添加表情',
     value: 'emojify',
     onSelect: ({ editor }) => {
       void editor.getApi(AIChatPlugin).aiChat.submit({
@@ -87,7 +87,7 @@ Start writing a new paragraph AFTER <Document> ONLY ONE SENTENCE`
   },
   explain: {
     icon: <BadgeHelp />,
-    label: 'Explain',
+    label: '解释',
     value: 'explain',
     onSelect: ({ editor }) => {
       void editor.getApi(AIChatPlugin).aiChat.submit({
@@ -100,7 +100,7 @@ Start writing a new paragraph AFTER <Document> ONLY ONE SENTENCE`
   },
   fixSpelling: {
     icon: <Check />,
-    label: 'Fix spelling & grammar',
+    label: '修正拼写和语法',
     value: 'fixSpelling',
     onSelect: ({ editor }) => {
       void editor.getApi(AIChatPlugin).aiChat.submit({
@@ -110,7 +110,7 @@ Start writing a new paragraph AFTER <Document> ONLY ONE SENTENCE`
   },
   improveWriting: {
     icon: <Wand />,
-    label: 'Improve writing',
+    label: '改进写作',
     value: 'improveWriting',
     onSelect: ({ editor }) => {
       void editor.getApi(AIChatPlugin).aiChat.submit({
@@ -120,7 +120,7 @@ Start writing a new paragraph AFTER <Document> ONLY ONE SENTENCE`
   },
   insertBelow: {
     icon: <ListEnd />,
-    label: 'Insert below',
+    label: '在下方插入',
     value: 'insertBelow',
     onSelect: ({ aiEditor, editor }) => {
       void editor.getTransforms(AIChatPlugin).aiChat.insertBelow(aiEditor);
@@ -128,7 +128,7 @@ Start writing a new paragraph AFTER <Document> ONLY ONE SENTENCE`
   },
   makeLonger: {
     icon: <ListPlus />,
-    label: 'Make longer',
+    label: '扩展内容',
     value: 'makeLonger',
     onSelect: ({ editor }) => {
       void editor.getApi(AIChatPlugin).aiChat.submit({
@@ -138,7 +138,7 @@ Start writing a new paragraph AFTER <Document> ONLY ONE SENTENCE`
   },
   makeShorter: {
     icon: <ListMinus />,
-    label: 'Make shorter',
+    label: '精简内容',
     value: 'makeShorter',
     onSelect: ({ editor }) => {
       void editor.getApi(AIChatPlugin).aiChat.submit({
@@ -148,7 +148,7 @@ Start writing a new paragraph AFTER <Document> ONLY ONE SENTENCE`
   },
   replace: {
     icon: <Check />,
-    label: 'Replace selection',
+    label: '替换选中内容',
     value: 'replace',
     onSelect: ({ aiEditor, editor }) => {
       void editor.getTransforms(AIChatPlugin).aiChat.replaceSelection(aiEditor);
@@ -156,7 +156,7 @@ Start writing a new paragraph AFTER <Document> ONLY ONE SENTENCE`
   },
   simplifyLanguage: {
     icon: <FeatherIcon />,
-    label: 'Simplify language',
+    label: '简化语言',
     value: 'simplifyLanguage',
     onSelect: ({ editor }) => {
       void editor.getApi(AIChatPlugin).aiChat.submit({
@@ -166,7 +166,7 @@ Start writing a new paragraph AFTER <Document> ONLY ONE SENTENCE`
   },
   summarize: {
     icon: <Album />,
-    label: 'Add a summary',
+    label: '添加摘要',
     value: 'summarize',
     onSelect: ({ editor }) => {
       void editor.getApi(AIChatPlugin).aiChat.submit({
@@ -180,7 +180,7 @@ Start writing a new paragraph AFTER <Document> ONLY ONE SENTENCE`
   },
   tryAgain: {
     icon: <CornerUpLeft />,
-    label: 'Try again',
+    label: '重试',
     value: 'tryAgain',
     onSelect: ({ editor }) => {
       void editor.getApi(AIChatPlugin).aiChat.reload();

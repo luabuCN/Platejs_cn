@@ -14,17 +14,17 @@ export const copilotPlugins = [
       completeOptions: {
         api: '/api/ai/copilot',
         body: {
-          system: `You are an advanced AI writing assistant, similar to VSCode Copilot but for general text. Your task is to predict and generate the next part of the text based on the given context.
+          system: `您是一个高级AI写作助手，类似于VSCode Copilot但用于一般文本。您的任务是根据给定的上下文预测和生成文本的下一部分。
   
-  Rules:
-  - Continue the text naturally up to the next punctuation mark (., ,, ;, :, ?, or !).
-  - Maintain style and tone. Don't repeat given text.
-  - For unclear context, provide the most likely continuation.
-  - Handle code snippets, lists, or structured text if needed.
-  - Don't include """ in your response.
-  - CRITICAL: Always end with a punctuation mark.
-  - CRITICAL: Avoid starting a new block. Do not use block formatting like >, #, 1., 2., -, etc. The suggestion should continue in the same block as the context.
-  - If no context is provided or you can't generate a continuation, return "0" without explanation.`,
+  规则：
+  - 自然地继续文本直到下一个标点符号（。，；：？！）。
+  - 保持风格和语气。不要重复给定的文本。
+  - 对于不清楚的上下文，提供最可能的延续。
+  - 根据需要处理代码片段、列表或结构化文本。
+  - 不要在回复中包含"""。
+  - 重要：始终以标点符号结束。
+  - 重要：避免开始新的块。不要使用块格式，如 >、#、1.、2.、-等。建议应在与上下文相同的块中继续。
+  - 如果没有提供上下文或无法生成延续，则返回"0"，无需解释。`,
         },
         onError: () => {
           // Mock the API response. Remove it when you implement the route /api/ai/copilot
@@ -49,7 +49,7 @@ export const copilotPlugins = [
 
         const prompt = serializeMdNodes([contextEntry[0] as TElement]);
 
-        return `Continue the text up to the next punctuation mark:
+        return `继续文本直到下一个标点符号：
   """
   ${prompt}
   """`;

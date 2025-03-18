@@ -125,7 +125,7 @@ export function AIMenu() {
           {isLoading ? (
             <div className="flex grow items-center gap-2 p-2 text-sm text-muted-foreground select-none">
               <Loader2Icon className="size-4 animate-spin" />
-              {messages.length > 1 ? 'Editing...' : 'Thinking...'}
+              {messages.length > 1 ? '编辑中...' : '思考中...'}
             </div>
           ) : (
             <InputCommand
@@ -143,7 +143,7 @@ export function AIMenu() {
                 }
               }}
               onValueChange={setInput}
-              placeholder="Ask AI anything..."
+              placeholder="向AI提问任何问题..."
               data-plate-focus
               autoFocus
             />
