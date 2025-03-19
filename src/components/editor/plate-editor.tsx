@@ -14,9 +14,7 @@ import type { Value } from '@udecode/plate';
 const value = '[{"children":[{"text":"测试"}],"type":"h1","id":"-8Cmr1OzE8"},{"children":[{"text":"A rich-text editor with AI capabilities. Try the "},{"bold":true,"text":"AI commands"},{"text":" or use "},{"kbd":true,"text":"Cmd+J"},{"text":" to open the AI menu."}],"type":"p","id":"zYi9mrLqjO"},{"type":"p","id":"J_aVjTGHTx","children":[{"text":""}]},{"children":[{"text":""}],"type":"p","id":"K34w553qRw"},{"children":[{"text":""}],"isUpload":true,"name":"","placeholderId":"Q-qrsOAcVlzDwFIRDXk3U","type":"img","url":"https://utfs.io/f/utsU4OeSn82t3qRqiKMBm8ZL9aiIueJzt5lEGphY0RQDncNP","id":"V4GabTePw4"},{"children":[{"text":""}],"type":"p","id":"klXcms2k_h"}]'
 
 export function PlateEditor() {
-  const editor = useCreateEditor({
-    value: JSON.parse(value),
-  });
+  const editor = useCreateEditor();
   const handleChange = (value: {
     editor: TPlateEditor<Value, PlateCorePlugin>;
     value: Value;
@@ -27,12 +25,12 @@ export function PlateEditor() {
 
   return (
     <DndProvider backend={HTML5Backend}>
-      <Plate onChange={handleChange}  editor={editor} >
-        <EditorContainer>
-          <Editor variant='demo'  />
+      <Plate onChange={handleChange}  editor={editor}>
+        <EditorContainer >
+          <Editor variant='fullWidth' placeholder='请输入文本或者询问 Ai'/>
         </EditorContainer>
         <SettingsDialog />
-      </Plate>
+      </Plate> 
     </DndProvider>
   );
 }

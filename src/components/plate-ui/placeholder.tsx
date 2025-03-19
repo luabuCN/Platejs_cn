@@ -41,7 +41,6 @@ export const withPlaceholders = (components: any) =>
     {
       key: ParagraphPlugin.key,
       hideOnBlur: true,
-      placeholder: '输入段落',
       query: {
         maxLevel: 1,
       },
