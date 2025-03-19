@@ -18,7 +18,7 @@ export function SuggestionToolbarButton() {
       className={cn(isSuggesting && 'text-brand/80 hover:text-brand/80')}
       onClick={() => setOption('isSuggesting', !isSuggesting)}
       onMouseDown={(e) => e.preventDefault()}
-      tooltip={isSuggesting ? 'Turn off suggesting' : 'Suggestion edits'}
+      tooltip={isSuggesting ? '关闭建议' : '建议编辑'}
     >
       <PencilLineIcon />
     </ToolbarButton>

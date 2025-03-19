@@ -8,7 +8,7 @@ import {
   useCodeBlockComboboxState,
 } from '@udecode/plate-code-block/react';
 import { Check, ChevronsUpDown } from 'lucide-react';
-// Prism must be imported before all language files
+// Prism 必须在所有语言文件之前导入
 import Prism from 'prismjs';
 
 import { Button } from './button';
@@ -73,7 +73,7 @@ import 'prismjs/components/prism-yaml.js';
 export { Prism };
 
 const languages: { label: string; value: string }[] = [
-  { label: 'Plain Text', value: 'text' },
+  { label: '纯文本', value: 'text' },
   { label: 'Bash', value: 'bash' },
   { label: 'CSS', value: 'css' },
   { label: 'Git', value: 'git' },
@@ -114,12 +114,12 @@ const languages: { label: string; value: string }[] = [
   { label: 'PHP', value: 'php' },
   { label: 'PowerShell', value: 'powershell' },
   { label: '.properties', value: 'properties' },
-  { label: 'Protocol Buffers', value: 'protobuf' },
+  { label: '协议缓冲区', value: 'protobuf' },
   { label: 'Python', value: 'python' },
   { label: 'R', value: 'r' },
   { label: 'Ruby', value: 'ruby' },
   { label: 'Sass (Sass)', value: 'sass' },
-  // FIXME: Error with current scala grammar
+  // FIXME: 当前 scala 语法有错误
   { label: 'Scala', value: 'scala' },
   { label: 'Scheme', value: 'scheme' },
   { label: 'Sass (Scss)', value: 'scss' },
@@ -158,7 +158,7 @@ export function CodeBlockCombobox() {
           {state.value
             ? languages.find((language) => language.value === state.value)
                 ?.label
-            : 'Plain Text'}
+            : '纯文本'}
           <ChevronsUpDown className="ml-2 size-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
@@ -167,9 +167,9 @@ export function CodeBlockCombobox() {
           <CommandInput
             value={value}
             onValueChange={(value) => setValue(value)}
-            placeholder="Search language..."
+            placeholder="搜索语言..."
           />
-          <CommandEmpty>No language found.</CommandEmpty>
+          <CommandEmpty>未找到语言。</CommandEmpty>
 
           <CommandList>
             {items.map((language) => (

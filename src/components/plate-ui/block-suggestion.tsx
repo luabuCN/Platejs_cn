@@ -69,35 +69,35 @@ export interface ResolvedSuggestion extends TResolvedSuggestion {
 export const BLOCK_SUGGESTION = '__block__';
 
 export const TYPE_TEXT_MAP: Record<string, (node?: TElement) => string> = {
-  [AudioPlugin.key]: () => 'Audio',
-  [BlockquotePlugin.key]: () => 'Blockquote',
-  [CalloutPlugin.key]: () => 'Callout',
-  [CodeBlockPlugin.key]: () => 'Code Block',
-  [ColumnPlugin.key]: () => 'Column',
-  [EquationPlugin.key]: () => 'Equation',
-  [FilePlugin.key]: () => 'File',
-  [HEADING_KEYS.h1]: () => `Heading 1`,
-  [HEADING_KEYS.h2]: () => `Heading 2`,
-  [HEADING_KEYS.h3]: () => `Heading 3`,
-  [HEADING_KEYS.h4]: () => `Heading 4`,
-  [HEADING_KEYS.h5]: () => `Heading 5`,
-  [HEADING_KEYS.h6]: () => `Heading 6`,
-  [HorizontalRulePlugin.key]: () => 'Horizontal Rule',
-  [ImagePlugin.key]: () => 'Image',
-  [MediaEmbedPlugin.key]: () => 'Media',
+  [AudioPlugin.key]: () => '音频',
+  [BlockquotePlugin.key]: () => '引用',
+  [CalloutPlugin.key]: () => '标注',
+  [CodeBlockPlugin.key]: () => '代码块',
+  [ColumnPlugin.key]: () => '列',
+  [EquationPlugin.key]: () => '公式',
+  [FilePlugin.key]: () => '文件',
+  [HEADING_KEYS.h1]: () => `标题 1`,
+  [HEADING_KEYS.h2]: () => `标题 2`,
+  [HEADING_KEYS.h3]: () => `标题 3`,
+  [HEADING_KEYS.h4]: () => `标题 4`,
+  [HEADING_KEYS.h5]: () => `标题 5`,
+  [HEADING_KEYS.h6]: () => `标题 6`,
+  [HorizontalRulePlugin.key]: () => '分割线',
+  [ImagePlugin.key]: () => '图片',
+  [MediaEmbedPlugin.key]: () => '媒体',
   [ParagraphPlugin.key]: (node) => {
     if (node?.[IndentListPlugin.key] === INDENT_LIST_KEYS.todo)
-      return 'Todo List';
+      return '待办事项';
     if (node?.[IndentListPlugin.key] === ListStyleType.Decimal)
-      return 'Ordered List';
-    if (node?.[IndentListPlugin.key] === ListStyleType.Disc) return 'List';
+      return '有序列表';
+    if (node?.[IndentListPlugin.key] === ListStyleType.Disc) return '列表';
 
-    return 'Paragraph';
+    return '段落';
   },
-  [TablePlugin.key]: () => 'Table',
-  [TocPlugin.key]: () => 'Table of Contents',
-  [TogglePlugin.key]: () => 'Toggle',
-  [VideoPlugin.key]: () => 'Video',
+  [TablePlugin.key]: () => '表格',
+  [TocPlugin.key]: () => '目录',
+  [TogglePlugin.key]: () => '折叠',
+  [VideoPlugin.key]: () => '视频',
 };
 
 export const BlockSuggestionCard = ({
@@ -128,7 +128,7 @@ export const BlockSuggestionCard = ({
   const [hovering, setHovering] = useState(false);
 
   const suggestionText2Array = (text: string) => {
-    if (text === BLOCK_SUGGESTION) return ['line breaks'];
+    if (text === BLOCK_SUGGESTION) return ['换行'];
 
     return text.split(BLOCK_SUGGESTION).filter(Boolean);
   };
@@ -144,7 +144,7 @@ export const BlockSuggestionCard = ({
     >
       <div className="flex flex-col p-4">
         <div className="relative flex items-center">
-          {/* Replace to your own backend or refer to potion */}
+          {/* 替换为你自己的后端或参考 potion */}
           <Avatar className="size-6">
             <AvatarImage
               alt={userInfo?.name}
@@ -171,7 +171,7 @@ export const BlockSuggestionCard = ({
                 {suggestionText2Array(suggestion.text!).map((text, index) => (
                   <div key={index} className="flex items-center gap-2">
                     <span className="text-sm text-muted-foreground">
-                      Delete:
+                      删除:
                     </span>
 
                     <span key={index} className="text-sm">
@@ -188,11 +188,11 @@ export const BlockSuggestionCard = ({
                   (text, index) => (
                     <div key={index} className="flex items-center gap-2">
                       <span className="text-sm text-muted-foreground">
-                        Add:
+                        添加:
                       </span>
 
                       <span key={index} className="text-sm">
-                        {text || 'line breaks'}
+                        {text || '换行'}
                       </span>
                     </div>
                   )
@@ -209,8 +209,8 @@ export const BlockSuggestionCard = ({
                         key={index}
                         className="flex items-center text-brand/80"
                       >
-                        <span className="text-sm">with:</span>
-                        <span className="text-sm">{text || 'line breaks'}</span>
+                        <span className="text-sm">替换为:</span>
+                        <span className="text-sm">{text || '换行'}</span>
                       </div>
                     </React.Fragment>
                   )
@@ -220,9 +220,9 @@ export const BlockSuggestionCard = ({
                   <React.Fragment key={index}>
                     <div key={index} className="flex items-center">
                       <span className="text-sm text-muted-foreground">
-                        {index === 0 ? 'Replace:' : 'Delete:'}
+                        {index === 0 ? '替换:' : '删除:'}
                       </span>
-                      <span className="text-sm">{text || 'line breaks'}</span>
+                      <span className="text-sm">{text || '换行'}</span>
                     </div>
                   </React.Fragment>
                 ))}
@@ -233,7 +233,7 @@ export const BlockSuggestionCard = ({
               <div className="flex items-center gap-2">
                 <span className="text-sm text-muted-foreground">
                   {Object.keys(suggestion.properties).map((key) => (
-                    <span key={key}>Un{key}</span>
+                    <span key={key}>取消{key}</span>
                   ))}
 
                   {Object.keys(suggestion.newProperties).map((key) => (
@@ -311,7 +311,7 @@ export const useResolveSuggestion = (
 
     const previousPath = map.get(id);
 
-    // If there are no suggestion nodes in the corresponding path in the map, then update it.
+    // 如果映射中相应路径没有建议节点，则更新它
     if (PathApi.isPath(previousPath)) {
       const nodes = api.suggestion.node({ id, at: previousPath, isText: true });
       const parentNode = api.node(previousPath);
@@ -377,7 +377,7 @@ export const useResolveSuggestion = (
         }),
       ];
 
-      // move line break to the end
+      // 将换行移到末尾
       entries.sort(([, path1], [, path2]) => {
         return PathApi.isChild(path1, path2) ? -1 : 1;
       });
@@ -387,7 +387,7 @@ export const useResolveSuggestion = (
       let properties: any = {};
       let newProperties: any = {};
 
-      // overlapping suggestion
+      // 重叠建议
       entries.forEach(([node]) => {
         if (TextApi.isText(node)) {
           const dataList = api.suggestion.dataList(node);
@@ -421,7 +421,7 @@ export const useResolveSuggestion = (
 
                 break;
               }
-              // No default
+              // 无默认值
             }
           });
         } else {

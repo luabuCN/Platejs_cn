@@ -76,7 +76,7 @@ export function FixedToolbarButtons() {
           </ToolbarGroup>
 
           <ToolbarGroup>
-            <AIToolbarButton tooltip="AI commands">
+            <AIToolbarButton tooltip="AI 命令">
               <WandSparklesIcon />
             </AIToolbarButton>
           </ToolbarGroup>
@@ -96,45 +96,45 @@ export function FixedToolbarButtons() {
           </ToolbarGroup>
 
           <ToolbarGroup>
-            <MarkToolbarButton nodeType={BoldPlugin.key} tooltip="Bold (⌘+B)">
+            <MarkToolbarButton nodeType={BoldPlugin.key} tooltip="加粗 (⌘+B)">
               <BoldIcon />
             </MarkToolbarButton>
 
             <MarkToolbarButton
               nodeType={ItalicPlugin.key}
-              tooltip="Italic (⌘+I)"
+              tooltip="斜体 (⌘+I)"
             >
               <ItalicIcon />
             </MarkToolbarButton>
 
             <MarkToolbarButton
               nodeType={UnderlinePlugin.key}
-              tooltip="Underline (⌘+U)"
+              tooltip="下划线 (⌘+U)"
             >
               <UnderlineIcon />
             </MarkToolbarButton>
 
             <MarkToolbarButton
               nodeType={StrikethroughPlugin.key}
-              tooltip="Strikethrough (⌘+⇧+M)"
+              tooltip="删除线 (⌘+⇧+M)"
             >
               <StrikethroughIcon />
             </MarkToolbarButton>
 
-            <MarkToolbarButton nodeType={CodePlugin.key} tooltip="Code (⌘+E)">
+            <MarkToolbarButton nodeType={CodePlugin.key} tooltip="代码 (⌘+E)">
               <Code2Icon />
             </MarkToolbarButton>
 
             <ColorDropdownMenu
               nodeType={FontColorPlugin.key}
-              tooltip="Text color"
+              tooltip="文字颜色"
             >
               <BaselineIcon />
             </ColorDropdownMenu>
 
             <ColorDropdownMenu
               nodeType={FontBackgroundColorPlugin.key}
-              tooltip="Background color"
+              tooltip="背景颜色"
             >
               <PaintBucketIcon />
             </ColorDropdownMenu>
@@ -177,7 +177,7 @@ export function FixedToolbarButtons() {
       <div className="grow" />
 
       <ToolbarGroup>
-        <MarkToolbarButton nodeType={HighlightPlugin.key} tooltip="Highlight">
+        <MarkToolbarButton nodeType={HighlightPlugin.key} tooltip="高亮">
           <HighlighterIcon />
         </MarkToolbarButton>
         <CommentToolbarButton />

@@ -50,7 +50,7 @@ export function NumberedIndentListToolbarButton() {
           })
         }
         data-state={pressed ? 'on' : 'off'}
-        tooltip="Numbered List"
+        tooltip="编号列表"
       >
         <ListOrdered className="size-4" />
       </ToolbarSplitButtonPrimary>
@@ -69,7 +69,7 @@ export function NumberedIndentListToolbarButton() {
                 })
               }
             >
-              Decimal (1, 2, 3)
+              数字 (1, 2, 3)
             </DropdownMenuItem>
             <DropdownMenuItem
               onSelect={() =>
@@ -78,7 +78,7 @@ export function NumberedIndentListToolbarButton() {
                 })
               }
             >
-              Lower Alpha (a, b, c)
+              小写字母 (a, b, c)
             </DropdownMenuItem>
             <DropdownMenuItem
               onSelect={() =>
@@ -87,7 +87,7 @@ export function NumberedIndentListToolbarButton() {
                 })
               }
             >
-              Upper Alpha (A, B, C)
+              大写字母 (A, B, C)
             </DropdownMenuItem>
             <DropdownMenuItem
               onSelect={() =>
@@ -96,7 +96,7 @@ export function NumberedIndentListToolbarButton() {
                 })
               }
             >
-              Lower Roman (i, ii, iii)
+              小写罗马数字 (i, ii, iii)
             </DropdownMenuItem>
             <DropdownMenuItem
               onSelect={() =>
@@ -105,7 +105,7 @@ export function NumberedIndentListToolbarButton() {
                 })
               }
             >
-              Upper Roman (I, II, III)
+              大写罗马数字 (I, II, III)
             </DropdownMenuItem>
           </DropdownMenuGroup>
         </DropdownMenuContent>
@@ -138,7 +138,7 @@ export function BulletedIndentListToolbarButton() {
           });
         }}
         data-state={pressed ? 'on' : 'off'}
-        tooltip="Bulleted List"
+        tooltip="项目符号列表"
       >
         <List className="size-4" />
       </ToolbarSplitButtonPrimary>
@@ -159,7 +159,7 @@ export function BulletedIndentListToolbarButton() {
             >
               <div className="flex items-center gap-2">
                 <div className="size-2 rounded-full border border-current bg-current" />
-                Default
+                默认
               </div>
             </DropdownMenuItem>
             <DropdownMenuItem
@@ -171,7 +171,7 @@ export function BulletedIndentListToolbarButton() {
             >
               <div className="flex items-center gap-2">
                 <div className="size-2 rounded-full border border-current" />
-                Circle
+                空心圆
               </div>
             </DropdownMenuItem>
             <DropdownMenuItem
@@ -183,7 +183,7 @@ export function BulletedIndentListToolbarButton() {
             >
               <div className="flex items-center gap-2">
                 <div className="size-2 border border-current bg-current" />
-                Square
+                方块
               </div>
             </DropdownMenuItem>
           </DropdownMenuGroup>

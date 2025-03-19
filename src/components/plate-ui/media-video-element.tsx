@@ -95,7 +95,7 @@ export const MediaVideoElement = withHOC(
                   </div>
                 )}
 
-                {/* TODO: Lazy load */}
+                {/* TODO: 懒加载 */}
                 {isUpload && isEditorMounted && (
                   <div ref={handleRef}>
                     <ReactPlayer
@@ -112,7 +112,7 @@ export const MediaVideoElement = withHOC(
             <Caption style={{ width }} align={align}>
               <CaptionTextarea
                 readOnly={readOnly}
-                placeholder="Write a caption..."
+                placeholder="写一个标题..."
               />
             </Caption>
           </figure>

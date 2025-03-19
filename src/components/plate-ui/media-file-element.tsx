@@ -38,7 +38,7 @@ export const MediaFileElement = withHOC(
 
               <div>{name}</div>
 
-              {/* TODO: add size */}
+              {/* TODO: 添加大小 */}
               {/* <div className="text-muted-foreground">{element.size}</div> */}
             </div>
 
@@ -46,7 +46,7 @@ export const MediaFileElement = withHOC(
               <CaptionTextarea
                 className="text-left"
                 readOnly={readOnly}
-                placeholder="Write a caption..."
+                placeholder="写一个标题..."
               />
             </Caption>
           </a>

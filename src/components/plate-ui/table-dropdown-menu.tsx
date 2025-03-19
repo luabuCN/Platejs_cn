@@ -46,7 +46,7 @@ export function TableDropdownMenu(props: DropdownMenuProps) {
   return (
     <DropdownMenu modal={false} {...openState} {...props}>
       <DropdownMenuTrigger asChild>
-        <ToolbarButton pressed={openState.open} tooltip="Table" isDropdown>
+        <ToolbarButton pressed={openState.open} tooltip="表格" isDropdown>
           <Table />
         </ToolbarButton>
       </DropdownMenuTrigger>
@@ -59,7 +59,7 @@ export function TableDropdownMenu(props: DropdownMenuProps) {
           <DropdownMenuSub>
             <DropdownMenuSubTrigger>
               <Grid3x3Icon />
-              <span>Table</span>
+              <span>表格</span>
             </DropdownMenuSubTrigger>
             <DropdownMenuSubContent className="m-0 p-0">
               <TablePicker />
@@ -69,7 +69,7 @@ export function TableDropdownMenu(props: DropdownMenuProps) {
           <DropdownMenuSub>
             <DropdownMenuSubTrigger disabled={!tableSelected}>
               <div className="size-4" />
-              <span>Cell</span>
+              <span>单元格</span>
             </DropdownMenuSubTrigger>
             <DropdownMenuSubContent>
               <DropdownMenuItem
@@ -81,7 +81,7 @@ export function TableDropdownMenu(props: DropdownMenuProps) {
                 }}
               >
                 <Combine />
-                Merge cells
+                合并单元格
               </DropdownMenuItem>
               <DropdownMenuItem
                 className="min-w-[180px]"
@@ -92,7 +92,7 @@ export function TableDropdownMenu(props: DropdownMenuProps) {
                 }}
               >
                 <Ungroup />
-                Split cell
+                拆分单元格
               </DropdownMenuItem>
             </DropdownMenuSubContent>
           </DropdownMenuSub>
@@ -100,7 +100,7 @@ export function TableDropdownMenu(props: DropdownMenuProps) {
           <DropdownMenuSub>
             <DropdownMenuSubTrigger disabled={!tableSelected}>
               <div className="size-4" />
-              <span>Row</span>
+              <span>行</span>
             </DropdownMenuSubTrigger>
             <DropdownMenuSubContent>
               <DropdownMenuItem
@@ -112,7 +112,7 @@ export function TableDropdownMenu(props: DropdownMenuProps) {
                 }}
               >
                 <ArrowUp />
-                Insert row before
+                在上方插入行
               </DropdownMenuItem>
               <DropdownMenuItem
                 className="min-w-[180px]"
@@ -123,7 +123,7 @@ export function TableDropdownMenu(props: DropdownMenuProps) {
                 }}
               >
                 <ArrowDown />
-                Insert row after
+                在下方插入行
               </DropdownMenuItem>
               <DropdownMenuItem
                 className="min-w-[180px]"
@@ -134,7 +134,7 @@ export function TableDropdownMenu(props: DropdownMenuProps) {
                 }}
               >
                 <XIcon />
-                Delete row
+                删除行
               </DropdownMenuItem>
             </DropdownMenuSubContent>
           </DropdownMenuSub>
@@ -142,7 +142,7 @@ export function TableDropdownMenu(props: DropdownMenuProps) {
           <DropdownMenuSub>
             <DropdownMenuSubTrigger disabled={!tableSelected}>
               <div className="size-4" />
-              <span>Column</span>
+              <span>列</span>
             </DropdownMenuSubTrigger>
             <DropdownMenuSubContent>
               <DropdownMenuItem
@@ -154,7 +154,7 @@ export function TableDropdownMenu(props: DropdownMenuProps) {
                 }}
               >
                 <ArrowLeft />
-                Insert column before
+                在左侧插入列
               </DropdownMenuItem>
               <DropdownMenuItem
                 className="min-w-[180px]"
@@ -165,7 +165,7 @@ export function TableDropdownMenu(props: DropdownMenuProps) {
                 }}
               >
                 <ArrowRight />
-                Insert column after
+                在右侧插入列
               </DropdownMenuItem>
               <DropdownMenuItem
                 className="min-w-[180px]"
@@ -176,7 +176,7 @@ export function TableDropdownMenu(props: DropdownMenuProps) {
                 }}
               >
                 <XIcon />
-                Delete column
+                删除列
               </DropdownMenuItem>
             </DropdownMenuSubContent>
           </DropdownMenuSub>
@@ -190,7 +190,7 @@ export function TableDropdownMenu(props: DropdownMenuProps) {
             }}
           >
             <Trash2Icon />
-            Delete table
+            删除表格
           </DropdownMenuItem>
         </DropdownMenuGroup>
       </DropdownMenuContent>

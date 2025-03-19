@@ -13,7 +13,7 @@ export const IndentToolbarButton = withRef<typeof ToolbarButton>(
     const { props } = useIndentButton();
 
     return (
-      <ToolbarButton ref={ref} tooltip="Indent" {...props} {...rest}>
+      <ToolbarButton ref={ref} tooltip="缩进" {...props} {...rest}>
         <Indent />
       </ToolbarButton>
     );

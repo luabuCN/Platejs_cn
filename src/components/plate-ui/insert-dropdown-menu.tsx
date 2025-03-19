@@ -79,46 +79,46 @@ interface Item {
 
 const groups: Group[] = [
   {
-    group: 'Basic blocks',
+    group: '基本块',
     items: [
       {
         icon: <PilcrowIcon />,
-        label: 'Paragraph',
+        label: '段落',
         value: ParagraphPlugin.key,
       },
       {
         icon: <Heading1Icon />,
-        label: 'Heading 1',
+        label: '标题 1',
         value: HEADING_KEYS.h1,
       },
       {
         icon: <Heading2Icon />,
-        label: 'Heading 2',
+        label: '标题 2',
         value: HEADING_KEYS.h2,
       },
       {
         icon: <Heading3Icon />,
-        label: 'Heading 3',
+        label: '标题 3',
         value: HEADING_KEYS.h3,
       },
       {
         icon: <TableIcon />,
-        label: 'Table',
+        label: '表格',
         value: TablePlugin.key,
       },
       {
         icon: <FileCodeIcon />,
-        label: 'Code',
+        label: '代码',
         value: CodeBlockPlugin.key,
       },
       {
         icon: <QuoteIcon />,
-        label: 'Quote',
+        label: '引用',
         value: BlockquotePlugin.key,
       },
       {
         icon: <MinusIcon />,
-        label: 'Divider',
+        label: '分隔符',
         value: HorizontalRulePlugin.key,
       },
     ].map((item) => ({
@@ -129,26 +129,26 @@ const groups: Group[] = [
     })),
   },
   {
-    group: 'Lists',
+    group: '列表',
     items: [
       {
         icon: <ListIcon />,
-        label: 'Bulleted list',
+        label: '项目符号列表',
         value: ListStyleType.Disc,
       },
       {
         icon: <ListOrderedIcon />,
-        label: 'Numbered list',
+        label: '编号列表',
         value: ListStyleType.Decimal,
       },
       {
         icon: <SquareIcon />,
-        label: 'To-do list',
+        label: '待办事项列表',
         value: INDENT_LIST_KEYS.todo,
       },
       {
         icon: <ChevronRightIcon />,
-        label: 'Toggle list',
+        label: '切换列表',
         value: TogglePlugin.key,
       },
     ].map((item) => ({
@@ -159,16 +159,16 @@ const groups: Group[] = [
     })),
   },
   {
-    group: 'Media',
+    group: '媒体',
     items: [
       {
         icon: <ImageIcon />,
-        label: 'Image',
+        label: '图片',
         value: ImagePlugin.key,
       },
       {
         icon: <FilmIcon />,
-        label: 'Embed',
+        label: '嵌入',
         value: MediaEmbedPlugin.key,
       },
       {
@@ -184,22 +184,22 @@ const groups: Group[] = [
     })),
   },
   {
-    group: 'Advanced blocks',
+    group: '高级块',
     items: [
       {
         icon: <TableOfContentsIcon />,
-        label: 'Table of contents',
+        label: '目录',
         value: TocPlugin.key,
       },
       {
         icon: <Columns3Icon />,
-        label: '3 columns',
+        label: '三列',
         value: 'action_three_columns',
       },
       {
         focusEditor: false,
         icon: <RadicalIcon />,
-        label: 'Equation',
+        label: '方程',
         value: EquationPlugin.key,
       },
     ].map((item) => ({
@@ -210,23 +210,23 @@ const groups: Group[] = [
     })),
   },
   {
-    group: 'Inline',
+    group: '行内',
     items: [
       {
         icon: <Link2Icon />,
-        label: 'Link',
+        label: '链接',
         value: LinkPlugin.key,
       },
       {
         focusEditor: true,
         icon: <CalendarIcon />,
-        label: 'Date',
+        label: '日期',
         value: DatePlugin.key,
       },
       {
         focusEditor: false,
         icon: <RadicalIcon />,
-        label: 'Inline Equation',
+        label: '行内方程',
         value: InlineEquationPlugin.key,
       },
     ].map((item) => ({
@@ -245,7 +245,7 @@ export function InsertDropdownMenu(props: DropdownMenuProps) {
   return (
     <DropdownMenu modal={false} {...openState} {...props}>
       <DropdownMenuTrigger asChild>
-        <ToolbarButton pressed={openState.open} tooltip="Insert" isDropdown>
+        <ToolbarButton pressed={openState.open} tooltip="插入" isDropdown>
           <PlusIcon />
         </ToolbarButton>
       </DropdownMenuTrigger>

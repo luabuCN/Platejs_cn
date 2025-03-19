@@ -45,16 +45,16 @@ export const formatCommentDate = (date: Date) => {
   const diffDays = differenceInDays(now, date);
 
   if (diffMinutes < 60) {
-    return `${diffMinutes}m`;
+    return `${diffMinutes}分钟`;
   }
   if (diffHours < 24) {
-    return `${diffHours}h`;
+    return `${diffHours}小时`;
   }
   if (diffDays < 2) {
-    return `${diffDays}d`;
+    return `${diffDays}天`;
   }
 
-  return format(date, 'MM/dd/yyyy');
+  return format(date, 'yyyy/MM/dd');
 };
 
 export interface TComment {
@@ -86,7 +86,6 @@ export function Comment(props: {
     showDocumentContent = false,
     onEditorClick,
   } = props;
-  // const { user } = comment;
 
   const discussions = useStoreValue(discussionStore, 'discussions');
   const userInfo = useFakeUserInfo(comment.userId);
@@ -137,7 +136,6 @@ export function Comment(props: {
 
   const { tf } = useEditorPlugin(CommentsPlugin);
 
-  // Replace to your own backend or refer to potion
   const isMyComment = currentUserId === comment.userId;
 
   const initialValue = comment.contentRich;
@@ -191,7 +189,6 @@ export function Comment(props: {
           <AvatarFallback>{userInfo?.name?.[0]}</AvatarFallback>
         </Avatar>
         <h4 className="mx-2 text-sm leading-none font-semibold">
-          {/* Replace to your own backend or refer to potion */}
           {userInfo?.name}
         </h4>
 
@@ -199,7 +196,7 @@ export function Comment(props: {
           <span className="mr-1">
             {formatCommentDate(new Date(comment.createdAt))}
           </span>
-          {comment.isEdited && <span>(edited)</span>}
+          {comment.isEdited && <span>(已编辑)</span>}
         </div>
 
         {isMyComment && (hovering || dropdownOpen) && (
@@ -319,9 +316,8 @@ export function CommentMoreDropdown(props: CommentMoreDropdownProps) {
 
   const onDeleteComment = React.useCallback(() => {
     if (!comment.id)
-      return alert('You are operating too quickly, please try again later.');
+      return alert('操作太快，请稍后重试');
 
-    // Find and update the discussion
     const updatedDiscussions = discussions.map((discussion: any) => {
       if (discussion.id !== comment.discussionId) {
         return discussion;
@@ -343,7 +339,6 @@ export function CommentMoreDropdown(props: CommentMoreDropdownProps) {
       };
     });
 
-    // Save back to session storage
     discussionStore.set('discussions', updatedDiscussions);
     onRemoveComment?.();
   }, [comment.discussionId, comment.id, discussions, onRemoveComment]);
@@ -352,7 +347,7 @@ export function CommentMoreDropdown(props: CommentMoreDropdownProps) {
     selectedEditCommentRef.current = true;
 
     if (!comment.id)
-      return alert('You are operating too quickly, please try again later.');
+      return alert('操作太快，请稍后重试');
 
     setEditingId(comment.id);
   }, [comment.id, setEditingId]);
@@ -382,11 +377,11 @@ export function CommentMoreDropdown(props: CommentMoreDropdownProps) {
         <DropdownMenuGroup>
           <DropdownMenuItem onClick={onEditComment}>
             <PencilIcon className="size-4" />
-            Edit comment
+            编辑评论
           </DropdownMenuItem>
           <DropdownMenuItem onClick={onDeleteComment}>
             <TrashIcon className="size-4" />
-            Delete comment
+            删除评论
           </DropdownMenuItem>
         </DropdownMenuGroup>
       </DropdownMenuContent>

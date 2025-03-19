@@ -38,7 +38,7 @@ export const ColorPickerContent = withRef<
   ) => {
     return (
       <div ref={ref} className={cn('flex flex-col', className)} {...props}>
-        <DropdownMenuGroup label="Custom Colors">
+        <DropdownMenuGroup label="自定义颜色">
           <ColorCustom
             color={color}
             className="px-2"
@@ -48,7 +48,7 @@ export const ColorPickerContent = withRef<
             updateCustomColor={updateCustomColor}
           />
         </DropdownMenuGroup>
-        <DropdownMenuGroup label="Default Colors">
+        <DropdownMenuGroup label="默认颜色">
           <ColorDropdownMenuItems
             color={color}
             className="px-2"
@@ -60,7 +60,7 @@ export const ColorPickerContent = withRef<
           <DropdownMenuGroup>
             <DropdownMenuItem className="p-2" onClick={clearColor}>
               <EraserIcon />
-              <span>Clear</span>
+              <span>清除</span>
             </DropdownMenuItem>
           </DropdownMenuGroup>
         )}

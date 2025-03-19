@@ -29,29 +29,29 @@ export function ModeDropdownMenu(props: DropdownMenuProps) {
 
   const isSuggesting = usePluginOption(SuggestionPlugin, 'isSuggesting');
 
-  let value = 'editing';
+  let value = '编辑中';
 
-  if (readOnly) value = 'viewing';
+  if (readOnly) value = '查看中';
   
-  if (isSuggesting) value = 'suggestion';
+  if (isSuggesting) value = '建议';
 
   const item: any = {
     editing: (
       <>
         <Pen />
-        <span className="hidden lg:inline">Editing</span>
+        <span className="hidden lg:inline">编辑中</span>
       </>
     ),
     suggestion: (
       <>
         <PencilLineIcon />
-        <span className="hidden lg:inline">Suggestion</span>
+        <span className="hidden lg:inline">建议</span>
       </>
     ),
     viewing: (
       <>
         <Eye />
-        <span className="hidden lg:inline">Viewing</span>
+        <span className="hidden lg:inline">查看中</span>
       </>
     ),
   };
@@ -61,7 +61,7 @@ export function ModeDropdownMenu(props: DropdownMenuProps) {
       <DropdownMenuTrigger asChild>
         <ToolbarButton
           pressed={openState.open}
-          tooltip="Editing mode"
+          tooltip="编辑模式"
           isDropdown
         >
           {item[value]}
@@ -72,7 +72,7 @@ export function ModeDropdownMenu(props: DropdownMenuProps) {
         <DropdownMenuRadioGroup
           value={value}
           onValueChange={(newValue) => {
-            if (newValue === 'viewing') {
+            if (newValue === '查看中') {
               setReadOnly(true);
 
               return;
@@ -80,7 +80,7 @@ export function ModeDropdownMenu(props: DropdownMenuProps) {
               setReadOnly(false);
             }
 
-            if (newValue === 'suggestion') {
+            if (newValue === '建议') {
               editor.setOption(SuggestionPlugin, 'isSuggesting', true);
 
               return;
@@ -88,22 +88,22 @@ export function ModeDropdownMenu(props: DropdownMenuProps) {
               editor.setOption(SuggestionPlugin, 'isSuggesting', false);
             }
 
-            if (newValue === 'editing') {
+            if (newValue === '编辑中') {
               editor.tf.focus();
 
               return;
             }
           }}
         >
-          <DropdownMenuRadioItem value="editing">
+          <DropdownMenuRadioItem value="编辑中">
             {item.editing}
           </DropdownMenuRadioItem>
 
-          <DropdownMenuRadioItem value="viewing">
+          <DropdownMenuRadioItem value="查看中">
             {item.viewing}
           </DropdownMenuRadioItem>
 
-          <DropdownMenuRadioItem value="suggestion">
+          <DropdownMenuRadioItem value="建议">
             {item.suggestion}
           </DropdownMenuRadioItem>
         </DropdownMenuRadioGroup>

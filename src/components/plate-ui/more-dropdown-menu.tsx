@@ -34,7 +34,7 @@ export function MoreDropdownMenu(props: DropdownMenuProps) {
   return (
     <DropdownMenu modal={false} {...openState} {...props}>
       <DropdownMenuTrigger asChild>
-        <ToolbarButton pressed={openState.open} tooltip="Insert">
+        <ToolbarButton pressed={openState.open} tooltip="插入">
           <MoreHorizontalIcon />
         </ToolbarButton>
       </DropdownMenuTrigger>
@@ -52,7 +52,7 @@ export function MoreDropdownMenu(props: DropdownMenuProps) {
             }}
           >
             <KeyboardIcon />
-            Keyboard input
+            键盘输入
           </DropdownMenuItem>
 
           <DropdownMenuItem
@@ -64,7 +64,7 @@ export function MoreDropdownMenu(props: DropdownMenuProps) {
             }}
           >
             <SuperscriptIcon />
-            Superscript
+            上标
             {/* (⌘+,) */}
           </DropdownMenuItem>
           <DropdownMenuItem
@@ -76,7 +76,7 @@ export function MoreDropdownMenu(props: DropdownMenuProps) {
             }}
           >
             <SubscriptIcon />
-            Subscript
+            下标
             {/* (⌘+.) */}
           </DropdownMenuItem>
         </DropdownMenuGroup>

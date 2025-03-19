@@ -59,26 +59,26 @@ const MEDIA_CONFIG: Record<
   [AudioPlugin.key]: {
     accept: ['audio/*'],
     icon: <AudioLinesIcon className="size-4" />,
-    title: 'Insert Audio',
-    tooltip: 'Audio',
+    title: '插入音频',
+    tooltip: '音频',
   },
   [FilePlugin.key]: {
     accept: ['*'],
     icon: <FileUpIcon className="size-4" />,
-    title: 'Insert File',
-    tooltip: 'File',
+    title: '插入文件',
+    tooltip: '文件',
   },
   [ImagePlugin.key]: {
     accept: ['image/*'],
     icon: <ImageIcon className="size-4" />,
-    title: 'Insert Image',
-    tooltip: 'Image',
+    title: '插入图片',
+    tooltip: '图片',
   },
   [VideoPlugin.key]: {
     accept: ['video/*'],
     icon: <FilmIcon className="size-4" />,
-    title: 'Insert Video',
-    tooltip: 'Video',
+    title: '插入视频',
+    tooltip: '视频',
   },
 };
 
@@ -132,11 +132,11 @@ export function MediaToolbarButton({
             <DropdownMenuGroup>
               <DropdownMenuItem onSelect={() => openFilePicker()}>
                 {currentConfig.icon}
-                Upload from computer
+                从计算机上传
               </DropdownMenuItem>
               <DropdownMenuItem onSelect={() => setDialogOpen(true)}>
                 <LinkIcon />
-                Insert via URL
+                通过URL插入
               </DropdownMenuItem>
             </DropdownMenuGroup>
           </DropdownMenuContent>
@@ -174,7 +174,7 @@ function MediaUrlDialogContent({
   const [url, setUrl] = useState('');
 
   const embedMedia = useCallback(() => {
-    if (!isUrl(url)) return toast.error('Invalid URL');
+    if (!isUrl(url)) return toast.error('无效的URL');
 
     setOpen(false);
     editor.tf.insertNodes({
@@ -208,14 +208,14 @@ function MediaUrlDialogContent({
       </AlertDialogDescription>
 
       <AlertDialogFooter>
-        <AlertDialogCancel>Cancel</AlertDialogCancel>
+        <AlertDialogCancel>取消</AlertDialogCancel>
         <AlertDialogAction
           onClick={(e) => {
             e.preventDefault();
             embedMedia();
           }}
         >
-          Accept
+          接受
         </AlertDialogAction>
       </AlertDialogFooter>
     </>

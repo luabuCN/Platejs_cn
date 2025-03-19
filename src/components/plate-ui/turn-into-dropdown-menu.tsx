@@ -48,66 +48,66 @@ const turnIntoItems = [
   {
     icon: <PilcrowIcon />,
     keywords: ['paragraph'],
-    label: 'Text',
+    label: '文本',
     value: ParagraphPlugin.key,
   },
   {
     icon: <Heading1Icon />,
     keywords: ['title', 'h1'],
-    label: 'Heading 1',
+    label: '标题 1',
     value: HEADING_KEYS.h1,
   },
   {
     icon: <Heading2Icon />,
     keywords: ['subtitle', 'h2'],
-    label: 'Heading 2',
+    label: '标题 2',
     value: HEADING_KEYS.h2,
   },
   {
     icon: <Heading3Icon />,
     keywords: ['subtitle', 'h3'],
-    label: 'Heading 3',
+    label: '标题 3',
     value: HEADING_KEYS.h3,
   },
   {
     icon: <ListIcon />,
     keywords: ['unordered', 'ul', '-'],
-    label: 'Bulleted list',
+    label: '项目符号列表',
     value: ListStyleType.Disc,
   },
   {
     icon: <ListOrderedIcon />,
     keywords: ['ordered', 'ol', '1'],
-    label: 'Numbered list',
+    label: '编号列表',
     value: ListStyleType.Decimal,
   },
   {
     icon: <SquareIcon />,
     keywords: ['checklist', 'task', 'checkbox', '[]'],
-    label: 'To-do list',
+    label: '待办事项列表',
     value: INDENT_LIST_KEYS.todo,
   },
   {
     icon: <ChevronRightIcon />,
     keywords: ['collapsible', 'expandable'],
-    label: 'Toggle list',
+    label: '切换列表',
     value: TogglePlugin.key,
   },
   {
     icon: <FileCodeIcon />,
     keywords: ['```'],
-    label: 'Code',
+    label: '代码',
     value: CodeBlockPlugin.key,
   },
   {
     icon: <QuoteIcon />,
     keywords: ['citation', 'blockquote', '>'],
-    label: 'Quote',
+    label: '引用',
     value: BlockquotePlugin.key,
   },
   {
     icon: <Columns3Icon />,
-    label: '3 columns',
+    label: '三列',
     value: 'action_three_columns',
   },
 ];
@@ -135,7 +135,7 @@ export function TurnIntoDropdownMenu(props: DropdownMenuProps) {
         <ToolbarButton
           className="min-w-[125px]"
           pressed={openState.open}
-          tooltip="Turn into"
+          tooltip="转换为"
           isDropdown
         >
           {selectedItem.label}
@@ -155,7 +155,7 @@ export function TurnIntoDropdownMenu(props: DropdownMenuProps) {
           onValueChange={(type) => {
             setBlockType(editor, type);
           }}
-          label="Turn into"
+          label="转换为"
         >
           {turnIntoItems.map(({ icon, label, value: itemValue }) => (
             <DropdownMenuRadioItem

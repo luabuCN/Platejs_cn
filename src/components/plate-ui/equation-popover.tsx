@@ -76,7 +76,7 @@ const EquationPopoverContent = ({
       />
 
       <Button variant="secondary" className="px-3" onClick={onClose}>
-        Done <CornerDownLeftIcon className="size-3.5" />
+        完成 <CornerDownLeftIcon className="size-3.5" />
       </Button>
     </PopoverContent>
   );

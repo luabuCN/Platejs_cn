@@ -59,7 +59,7 @@ export function ImportToolbarButton({ children, ...props }: DropdownMenuProps) {
   return (
     <DropdownMenu modal={false} {...openState} {...props}>
       <DropdownMenuTrigger asChild>
-        <ToolbarButton pressed={openState.open} tooltip="Import" isDropdown>
+        <ToolbarButton pressed={openState.open} tooltip="导入" isDropdown>
           <ArrowUpToLineIcon className="size-4" />
         </ToolbarButton>
       </DropdownMenuTrigger>
@@ -72,7 +72,7 @@ export function ImportToolbarButton({ children, ...props }: DropdownMenuProps) {
               openFilePicker();
             }}
           >
-            Import from HTML
+            从 HTML 导入
           </DropdownMenuItem>
 
           <DropdownMenuItem
@@ -81,7 +81,7 @@ export function ImportToolbarButton({ children, ...props }: DropdownMenuProps) {
               openFilePicker();
             }}
           >
-            Import from Markdown
+            从 Markdown 导入
           </DropdownMenuItem>
         </DropdownMenuGroup>
       </DropdownMenuContent>

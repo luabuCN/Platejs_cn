@@ -84,71 +84,71 @@ const groups: Group[] = [
     ],
   },
   {
-    group: 'Basic blocks',
+    group: '基本块',
     items: [
       {
         icon: <PilcrowIcon />,
         keywords: ['paragraph'],
-        label: 'Text',
+        label: '文本',
         value: ParagraphPlugin.key,
       },
       {
         icon: <Heading1Icon />,
         keywords: ['title', 'h1'],
-        label: 'Heading 1',
+        label: '标题 1',
         value: HEADING_KEYS.h1,
       },
       {
         icon: <Heading2Icon />,
         keywords: ['subtitle', 'h2'],
-        label: 'Heading 2',
+        label: '标题 2',
         value: HEADING_KEYS.h2,
       },
       {
         icon: <Heading3Icon />,
         keywords: ['subtitle', 'h3'],
-        label: 'Heading 3',
+        label: '标题 3',
         value: HEADING_KEYS.h3,
       },
       {
         icon: <ListIcon />,
         keywords: ['unordered', 'ul', '-'],
-        label: 'Bulleted list',
+        label: '项目符号列表',
         value: ListStyleType.Disc,
       },
       {
         icon: <ListOrdered />,
         keywords: ['ordered', 'ol', '1'],
-        label: 'Numbered list',
+        label: '编号列表',
         value: ListStyleType.Decimal,
       },
       {
         icon: <Square />,
         keywords: ['checklist', 'task', 'checkbox', '[]'],
-        label: 'To-do list',
+        label: '待办事项列表',
         value: INDENT_LIST_KEYS.todo,
       },
       {
         icon: <ChevronRightIcon />,
         keywords: ['collapsible', 'expandable'],
-        label: 'Toggle',
+        label: '切换',
         value: TogglePlugin.key,
       },
       {
         icon: <Code2 />,
         keywords: ['```'],
-        label: 'Code Block',
+        label: '代码块',
         value: CodeBlockPlugin.key,
       },
       {
         icon: <Table />,
-        label: 'Table',
+        label: '表格',
         value: TablePlugin.key,
       },
       {
         icon: <Quote />,
         keywords: ['citation', 'blockquote', 'quote', '>'],
-        label: 'Blockquote',
+        label: '引用',
         value: BlockquotePlugin.key,
       },
     ].map((item) => ({
@@ -159,23 +159,23 @@ const groups: Group[] = [
     })),
   },
   {
-    group: 'Advanced blocks',
+    group: '高级块',
     items: [
       {
         icon: <TableOfContentsIcon />,
         keywords: ['toc'],
-        label: 'Table of contents',
+        label: '目录',
         value: TocPlugin.key,
       },
       {
         icon: <Columns3Icon />,
-        label: '3 columns',
+        label: '三列',
         value: 'action_three_columns',
       },
       {
         focusEditor: false,
         icon: <RadicalIcon />,
-        label: 'Equation',
+        label: '方程',
         value: EquationPlugin.key,
       },
     ].map((item) => ({
@@ -186,19 +186,19 @@ const groups: Group[] = [
     })),
   },
   {
-    group: 'Inline',
+    group: '内联',
     items: [
       {
         focusEditor: true,
         icon: <CalendarIcon />,
         keywords: ['time'],
-        label: 'Date',
+        label: '日期',
         value: DatePlugin.key,
       },
       {
         focusEditor: false,
         icon: <RadicalIcon />,
-        label: 'Inline Equation',
+        label: '内联方程',
         value: InlineEquationPlugin.key,
       },
     ].map((item) => ({
@@ -226,7 +226,7 @@ export const SlashInputElement = withRef<typeof PlateElement>(
           <InlineComboboxInput />
 
           <InlineComboboxContent>
-            <InlineComboboxEmpty>No results</InlineComboboxEmpty>
+            <InlineComboboxEmpty>没有结果</InlineComboboxEmpty>
 
             {groups.map(({ group, items }) => (
               <InlineComboboxGroup key={group}>

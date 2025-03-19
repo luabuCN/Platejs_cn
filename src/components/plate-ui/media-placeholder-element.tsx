@@ -33,22 +33,22 @@ const CONTENT: Record<
 > = {
   [AudioPlugin.key]: {
     accept: ['audio/*'],
-    content: 'Add an audio file',
+    content: '添加音频文件',
     icon: <AudioLines />,
   },
   [FilePlugin.key]: {
     accept: ['*'],
-    content: 'Add a file',
+    content: '添加文件',
     icon: <FileUp />,
   },
   [ImagePlugin.key]: {
     accept: ['image/*'],
-    content: 'Add an image',
+    content: '添加图片',
     icon: <ImageIcon />,
   },
   [VideoPlugin.key]: {
     accept: ['video/*'],
-    content: 'Add a video',
+    content: '添加视频',
     icon: <Film />,
   },
 };

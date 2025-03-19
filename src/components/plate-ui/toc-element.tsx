@@ -50,7 +50,7 @@ export const TocElement = withRef<typeof PlateElement>(
             ))
           ) : (
             <div className="text-sm text-gray-500">
-              Create a heading to display the table of contents.
+              创建一个标题以显示目录。
             </div>
           )}
         </div>

@@ -128,29 +128,29 @@ export function CommentCreateForm({
     setResetKey((prev) => prev + 1);
 
     if (discussionId) {
-      // Get existing discussion
+      // 获取现有讨论
       const discussion = discussions.find((d: any) => d.id === discussionId);
 
       if (!discussion || !commentValue) return;
 
-      // Create reply comment
+      // 创建回复评论
       const comment: TComment = {
         id: nanoid(),
         contentRich: commentValue,
         createdAt: new Date(),
         discussionId,
         isEdited: false,
-        // mock user id
+        // 模拟用户ID
         userId: currentUserId,
       };
 
-      // Add reply to discussion comments
+      // 将回复添加到讨论评论中
       const updatedDiscussion = {
         ...discussion,
         comments: [...discussion.comments, comment],
       };
 
-      // Filter out old discussion and add updated one
+      // 过滤掉旧讨论并添加更新后的讨论
       const updatedDiscussions = discussions
         .filter((d: any) => d.id !== discussionId)
         .concat(updatedDiscussion);
@@ -171,7 +171,7 @@ export function CommentCreateForm({
       .join('');
 
     const _discussionId = nanoid();
-    // Mock creating new discussion
+    // 模拟创建新讨论
     const newDiscussion: TDiscussion = {
       id: _discussionId,
       comments: [
@@ -190,7 +190,7 @@ export function CommentCreateForm({
       userId: currentUserId,
     };
 
-    // Update discussions store
+    // 更新讨论存储
     discussionStore.set('discussions', [...discussions, newDiscussion]);
 
     const id = newDiscussion.id;
@@ -211,7 +211,7 @@ export function CommentCreateForm({
 
     if (!commentValue) return;
 
-    // Mock creating suggestion
+    // 模拟创建建议
     const suggestion: TDiscussion = {
       id: discussionId,
       comments: [
@@ -229,14 +229,14 @@ export function CommentCreateForm({
       userId: 'user1',
     };
 
-    // Update discussions store
+    // 更新讨论存储
     discussionStore.set('discussions', [...discussions, suggestion]);
   }, [discussionId, commentValue, discussions]);
 
   return (
     <div className={cn('flex w-full', className)}>
       <div className="mt-1 mr-1 shrink-0">
-        {/* Replace to your own backend or refer to potion */}
+        {/* 替换为您自己的后端或参考 potion */}
         <Avatar className="size-6">
           <AvatarImage alt={userInfo?.name} src={userInfo?.avatarUrl} />
           <AvatarFallback>{userInfo?.name?.[0]}</AvatarFallback>
@@ -254,7 +254,7 @@ export function CommentCreateForm({
             <Editor
               variant="comment"
               className="min-h-[25px] grow pt-0.5 pr-8"
-              placeholder="Reply..."
+              placeholder="回复..."
               autoComplete="off"
               autoFocus={autoFocus}
             />

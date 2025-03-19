@@ -139,14 +139,14 @@ export const TableFloatingToolbar = withRef<typeof PopoverContent>(
             contentEditable={false}
           >
             <ToolbarGroup>
-              <ColorDropdownMenu tooltip="Background color">
+              <ColorDropdownMenu tooltip="背景颜色">
                 <PaintBucketIcon />
               </ColorDropdownMenu>
               {canMerge && (
                 <ToolbarButton
                   onClick={() => tf.table.merge()}
                   onMouseDown={(e) => e.preventDefault()}
-                  tooltip="Merge cells"
+                  tooltip="合并单元格"
                 >
                   <CombineIcon />
                 </ToolbarButton>
@@ -155,7 +155,7 @@ export const TableFloatingToolbar = withRef<typeof PopoverContent>(
                 <ToolbarButton
                   onClick={() => tf.table.split()}
                   onMouseDown={(e) => e.preventDefault()}
-                  tooltip="Split cell"
+                  tooltip="拆分单元格"
                 >
                   <SquareSplitHorizontalIcon />
                 </ToolbarButton>
@@ -163,7 +163,7 @@ export const TableFloatingToolbar = withRef<typeof PopoverContent>(
 
               <DropdownMenu modal={false}>
                 <DropdownMenuTrigger asChild>
-                  <ToolbarButton tooltip="Cell borders">
+                  <ToolbarButton tooltip="单元格边框">
                     <Grid2X2Icon />
                   </ToolbarButton>
                 </DropdownMenuTrigger>
@@ -175,7 +175,7 @@ export const TableFloatingToolbar = withRef<typeof PopoverContent>(
 
               {collapsed && (
                 <ToolbarGroup>
-                  <ToolbarButton tooltip="Delete table" {...buttonProps}>
+                  <ToolbarButton tooltip="删除表格" {...buttonProps}>
                     <Trash2Icon />
                   </ToolbarButton>
                 </ToolbarGroup>
@@ -189,7 +189,7 @@ export const TableFloatingToolbar = withRef<typeof PopoverContent>(
                     tf.insert.tableRow({ before: true });
                   }}
                   onMouseDown={(e) => e.preventDefault()}
-                  tooltip="Insert row before"
+                  tooltip="在上方插入行"
                 >
                   <ArrowUp />
                 </ToolbarButton>
@@ -198,7 +198,7 @@ export const TableFloatingToolbar = withRef<typeof PopoverContent>(
                     tf.insert.tableRow();
                   }}
                   onMouseDown={(e) => e.preventDefault()}
-                  tooltip="Insert row after"
+                  tooltip="在下方插入行"
                 >
                   <ArrowDown />
                 </ToolbarButton>
@@ -207,7 +207,7 @@ export const TableFloatingToolbar = withRef<typeof PopoverContent>(
                     tf.remove.tableRow();
                   }}
                   onMouseDown={(e) => e.preventDefault()}
-                  tooltip="Delete row"
+                  tooltip="删除行"
                 >
                   <XIcon />
                 </ToolbarButton>
@@ -221,7 +221,7 @@ export const TableFloatingToolbar = withRef<typeof PopoverContent>(
                     tf.insert.tableColumn({ before: true });
                   }}
                   onMouseDown={(e) => e.preventDefault()}
-                  tooltip="Insert column before"
+                  tooltip="在左侧插入列"
                 >
                   <ArrowLeft />
                 </ToolbarButton>
@@ -230,7 +230,7 @@ export const TableFloatingToolbar = withRef<typeof PopoverContent>(
                     tf.insert.tableColumn();
                   }}
                   onMouseDown={(e) => e.preventDefault()}
-                  tooltip="Insert column after"
+                  tooltip="在右侧插入列"
                 >
                   <ArrowRight />
                 </ToolbarButton>
@@ -239,7 +239,7 @@ export const TableFloatingToolbar = withRef<typeof PopoverContent>(
                     tf.remove.tableColumn();
                   }}
                   onMouseDown={(e) => e.preventDefault()}
-                  tooltip="Delete column"
+                  tooltip="删除列"
                 >
                   <XIcon />
                 </ToolbarButton>
@@ -285,28 +285,28 @@ export const TableBordersDropdownMenuContent = withRef<
           onCheckedChange={getOnSelectTableBorder('top')}
         >
           <BorderTop />
-          <div>Top Border</div>
+          <div>上边框</div>
         </DropdownMenuCheckboxItem>
         <DropdownMenuCheckboxItem
           checked={hasRightBorder}
           onCheckedChange={getOnSelectTableBorder('right')}
         >
           <BorderRight />
-          <div>Right Border</div>
+          <div>右边框</div>
         </DropdownMenuCheckboxItem>
         <DropdownMenuCheckboxItem
           checked={hasBottomBorder}
           onCheckedChange={getOnSelectTableBorder('bottom')}
         >
           <BorderBottom />
-          <div>Bottom Border</div>
+          <div>下边框</div>
         </DropdownMenuCheckboxItem>
         <DropdownMenuCheckboxItem
           checked={hasLeftBorder}
           onCheckedChange={getOnSelectTableBorder('left')}
         >
           <BorderLeft />
-          <div>Left Border</div>
+          <div>左边框</div>
         </DropdownMenuCheckboxItem>
       </DropdownMenuGroup>
 
@@ -316,14 +316,14 @@ export const TableBordersDropdownMenuContent = withRef<
           onCheckedChange={getOnSelectTableBorder('none')}
         >
           <BorderNone />
-          <div>No Border</div>
+          <div>无边框</div>
         </DropdownMenuCheckboxItem>
         <DropdownMenuCheckboxItem
           checked={hasOuterBorders}
           onCheckedChange={getOnSelectTableBorder('outer')}
         >
           <BorderAll />
-          <div>Outside Borders</div>
+          <div>外边框</div>
         </DropdownMenuCheckboxItem>
       </DropdownMenuGroup>
     </DropdownMenuContent>
@@ -364,7 +364,7 @@ function ColorDropdownMenu({ children, tooltip }: ColorDropdownMenuProps) {
       </DropdownMenuTrigger>
 
       <DropdownMenuContent align="start">
-        <DropdownMenuGroup label="Colors">
+        <DropdownMenuGroup label="颜色">
           <ColorDropdownMenuItems
             className="px-2"
             colors={DEFAULT_COLORS}
@@ -374,7 +374,7 @@ function ColorDropdownMenu({ children, tooltip }: ColorDropdownMenuProps) {
         <DropdownMenuGroup>
           <DropdownMenuItem className="p-2" onClick={onClearColor}>
             <EraserIcon />
-            <span>Clear</span>
+            <span>清除</span>
           </DropdownMenuItem>
         </DropdownMenuGroup>
       </DropdownMenuContent>

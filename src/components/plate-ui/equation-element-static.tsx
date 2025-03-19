@@ -46,7 +46,7 @@ export function EquationElementStatic({
         ) : (
           <div className="flex h-7 w-full items-center gap-2 text-sm whitespace-nowrap text-muted-foreground">
             <RadicalIcon className="size-6 text-muted-foreground/80" />
-            <div>Add a Tex equation</div>
+            <div>添加 Tex 公式</div>
           </div>
         )}
       </div>

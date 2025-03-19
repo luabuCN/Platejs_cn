@@ -75,7 +75,7 @@ export const InlineEquationElement = withRef<typeof PlateElement>(
               {element.texExpression.length === 0 && (
                 <span>
                   <RadicalIcon className="mr-1 inline-block h-[19px] w-4 py-[1.5px] align-text-bottom" />
-                  New equation
+                  新方程
                 </span>
               )}
             </div>
